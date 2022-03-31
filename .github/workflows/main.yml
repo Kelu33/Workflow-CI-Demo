@@ -33,8 +33,7 @@ jobs:
 
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
-        run: |
-          newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html
+        run: newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra,cli --reporter-htmlextra-export testResults/htmlreport.html
 
       # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
