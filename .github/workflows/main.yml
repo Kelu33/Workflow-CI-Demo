@@ -26,18 +26,14 @@ jobs:
           npm install -g newman
           npm install -g newman-reporter-htmlextra
 
-      # Make directory to upload the test results
-      - name: Make Directory for results
-        run: mkdir -p testResults
-
-
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
-        run: newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra,cli --reporter-htmlextra-export testResults/htmlreport.html
+        run: newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra,cli
 
       # Upload the contents of Test Results directory to workspace
-      - name: Output the run Details
-        uses: actions/upload-artifact@v2
-        with:
-          name: Reports
-          path: testResults
+      - name: Publier le rapport HTML
+          uses: actions/upload-artifact@v3
+          if: always()
+          with:
+            name: test-report-${{ github.run_id }}
+            path: newman/*.html
