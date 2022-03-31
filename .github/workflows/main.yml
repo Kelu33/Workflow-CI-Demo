@@ -32,8 +32,8 @@ jobs:
 
       # Upload the contents of Test Results directory to workspace
       - name: Publier le rapport HTML
-          uses: actions/upload-artifact@v3
-          if: always()
-          with:
-            name: test-report-${{ github.run_id }}
-            path: newman/*.html
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-report-${{ github.run_id }}
+          path: newman/*.html
