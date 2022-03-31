@@ -28,7 +28,7 @@ jobs:
 
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
-        run: newman run https://www.getpostman.com/collections/a47f5e9b24c475224f4f --iteration-data .github/data.json -r htmlextra,cli
+        run: newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra,cli
 
       # Upload the contents of Test Results directory to workspace
       - name: Publier le rapport HTML
