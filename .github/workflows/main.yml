@@ -2,18 +2,7 @@
 name: Workflow-CI-Demo
 
 #Set the action on which the workflow will trigger
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+on: [push,workflow_dispatch]
 
 jobs:
   test-api:
