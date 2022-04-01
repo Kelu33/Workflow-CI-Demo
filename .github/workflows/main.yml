@@ -27,9 +27,9 @@ jobs:
           npm install -g newman-reporter-htmlextra
 
       # Run the POSTMAN collection
-      - name: Run POSTMAN collection 1
+      - name: Run Rick&Morty API tests
         run: newman run https://www.getpostman.com/collections/ba47e81be11dcbfcaae0 -r htmlextra,cli
-      - name: Run POSTMAN collection 2
+      - name: Run Google Books API tests
         run: newman run https://www.getpostman.com/collections/b592dc215f4d94952e0f -r htmlextra,cli
 
       # Upload the contents of Test Results directory to workspace
